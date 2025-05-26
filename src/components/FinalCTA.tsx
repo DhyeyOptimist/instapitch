@@ -24,30 +24,10 @@ const FinalCTA = () => {
             >
               Start Building for Free
             </Button>
-            <Button 
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary-600 font-semibold px-8 py-4 text-lg"
-            >
-              Schedule a Demo
-            </Button>
+            
           </div>
 
-          {/* Trust Indicators */}
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="animate-fade-in">
-              <div className="text-3xl font-bold text-white mb-2">30 sec</div>
-              <div className="text-primary-100">Average generation time</div>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-              <div className="text-3xl font-bold text-white mb-2">No setup</div>
-              <div className="text-primary-100">Start immediately</div>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
-              <div className="text-3xl font-bold text-white mb-2">Free trial</div>
-              <div className="text-primary-100">No credit card needed</div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>

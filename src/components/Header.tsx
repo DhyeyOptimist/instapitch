@@ -15,7 +15,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">P</span>
             </div>
-            <span className="text-xl font-space-grotesk font-bold text-dark-900">PitchAI</span>
+            <span className="text-xl font-space-grotesk font-bold text-dark-900">Instapitch</span>
           </div>
 
           {/* Desktop Navigation */}

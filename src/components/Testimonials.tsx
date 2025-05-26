@@ -9,7 +9,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "PitchAI helped us create a compelling deck that raised $2M in our seed round. The AI understood our vision perfectly.",
+      quote: "Instapitch helped us create a compelling deck that raised $2M in our seed round. The AI understood our vision perfectly.",
       founder: "Sarah Chen",
       company: "TechFlow",
       logo: "TF",
@@ -17,7 +17,7 @@ const Testimonials = () => {
     },
     {
       id: 2,
-      quote: "The quality of presentations PitchAI generates is incredible. It saved us weeks of work and impressed our investors.",
+      quote: "The quality of presentations Instapitch generates is incredible. It saved us weeks of work and impressed our investors.",
       founder: "Michael Rodriguez",
       company: "StartupLab",
       logo: "SL",
@@ -25,7 +25,7 @@ const Testimonials = () => {
     },
     {
       id: 3,
-      quote: "From concept to funding in record time. PitchAI's storytelling capabilities are game-changing for entrepreneurs.",
+      quote: "From concept to funding in record time. Instapitch's storytelling capabilities are game-changing for entrepreneurs.",
       founder: "Emily Watson",
       company: "InnovateNow",
       logo: "IN",
@@ -33,7 +33,7 @@ const Testimonials = () => {
     },
     {
       id: 4,
-      quote: "The AI-generated content was so on-point, our advisors thought we hired a professional presentation agency.",
+      quote: "The AI-content was so on-point, our advisors thought we hired a professional presentation agency.",
       founder: "David Kim",
       company: "FutureVision",
       logo: "FV",
@@ -66,10 +66,10 @@ const Testimonials = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-space-grotesk font-bold text-dark-900 mb-6">
-            What Founders <span className="gradient-text">Say</span>
+            (What Founders <span className="gradient-text">Say)</span>
           </h2>
           <p className="text-lg text-dark-600 max-w-2xl mx-auto">
-            Join thousands of successful entrepreneurs who've raised funding with PitchAI
+            (Join thousands of successful entrepreneurs who've raised funding with Instapitch)
           </p>
         </div>
 

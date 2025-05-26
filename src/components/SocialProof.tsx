@@ -15,7 +15,7 @@ const SocialProof = () => {
     <section className="py-16 bg-dark-50">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <p className="text-dark-600 font-medium">Trusted by 500+ companies worldwide</p>
+          <p className="text-dark-600 font-medium">Trusted by Teams Globally</p>
         </div>
         
         {/* Scrolling Logo Strip */}
