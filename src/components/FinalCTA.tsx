@@ -56,13 +56,7 @@ const FinalCTA = () => {
               Start Building for Free
             </Button>
             
-            <Button 
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold px-12 py-6 text-lg hover-lift transition-all duration-300 hover:scale-105"
-            >
-              View Pricing
-            </Button>
+            
           </div>
         </div>
       </div>
