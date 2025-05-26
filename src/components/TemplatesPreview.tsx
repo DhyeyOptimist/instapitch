@@ -6,42 +6,42 @@ const TemplatesPreview = () => {
       id: 1,
       name: 'SaaS Startup',
       description: 'Perfect for software as a service companies',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: '/public/temp1.png',
 
     },
     {
       id: 2,
       name: 'E-commerce',
       description: 'Ideal for retail and marketplace businesses',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: '/public/temp2.png',
 
     },
     {
       id: 3,
       name: 'FinTech',
       description: 'Tailored for financial technology solutions',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: '/public/temp3.png',
 
     },
     {
       id: 4,
       name: 'HealthTech',
       description: 'Designed for healthcare and wellness startups',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: '/public/temp4.png',
 
     },
     {
       id: 5,
       name: 'EdTech',
       description: 'Built for education and learning platforms',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: '/public/temp5.png',
 
     },
     {
       id: 6,
       name: 'Enterprise',
       description: 'Professional template for B2B solutions',
-      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: '/public/temp6.png',
 
     }
   ];
@@ -79,8 +79,7 @@ const TemplatesPreview = () => {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                
-                
+
               </div>
             </div>
           ))}

@@ -5,25 +5,25 @@ const HowItWorks = () => {
       number: '01',
       title: 'Describe Your Idea',
       description: 'Simply tell our AI about your business, product, or service in your own words.',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/public/first.png'
     },
     {
       number: '02',
       title: 'AI Analyzes & Structures',
       description: 'Our advanced AI analyzes your input and creates a logical, compelling narrative structure.',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/public/second.png'
     },
     {
       number: '03',
       title: 'Design & Content Generation',
       description: 'Professional slides are automatically generated with stunning visuals and persuasive content.',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/public/third.png'
     },
     {
       number: '04',
       title: 'Customize & Present',
       description: 'Fine-tune your deck with our intuitive editor and present with confidence to investors.',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/public/fourth.png'
     }
   ];
 

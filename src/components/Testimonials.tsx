@@ -10,34 +10,42 @@ const Testimonials = () => {
     {
       id: 1,
       quote: "Instapitch helped us create a compelling deck that raised $2M in our seed round. The AI understood our vision perfectly.",
-      founder: "Sarah Chen",
+      founder: "Digvijay Pandey",
       company: "TechFlow",
       logo: "TF",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/public/digvijaypandey.jpeg"
     },
     {
       id: 2,
       quote: "The quality of presentations Instapitch generates is incredible. It saved us weeks of work and impressed our investors.",
-      founder: "Michael Rodriguez",
+      founder: "Gauri Kumar",
       company: "StartupLab",
       logo: "SL",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/public/gauri_kumar.png"
     },
     {
       id: 3,
       quote: "From concept to funding in record time. Instapitch's storytelling capabilities are game-changing for entrepreneurs.",
-      founder: "Emily Watson",
+      founder: "Mayank Jani",
       company: "InnovateNow",
       logo: "IN",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/public/mayank_jani.png"
     },
     {
       id: 4,
       quote: "The AI-content was so on-point, our advisors thought we hired a professional presentation agency.",
-      founder: "David Kim",
+      founder: "shashank Rai",
       company: "FutureVision",
       logo: "FV",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/public/shashankrai.jpeg"
+    },
+    {
+      id: 5,
+      quote: "The AI-content was so on-point, our advisors thought we hired a professional presentation agency.",
+      founder: "Vedansh Goyal",
+      company: "FutureVision",
+      logo: "FV",
+      image: "/public/vedansh_goyal.png"
     }
   ];
 

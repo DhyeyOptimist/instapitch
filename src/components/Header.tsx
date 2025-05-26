@@ -5,11 +5,10 @@ import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-morphism">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20 ">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
@@ -19,23 +18,25 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
+          <nav className="hidden md:flex items-center space-x-4 ml-auto">
+            <a href="#home" className="text-dark-700 hover:text-primary-600 font-medium space-x-6">
               Home
             </a>
-            <a href="#blogs" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
+            <a href="#blogs" className="text-dark-700 hover:text-primary-600 font-medium">
               Blogs
             </a>
-            <a href="#pricing" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
+            <a href="#pricing" className="text-dark-700 hover:text-primary-600 font-medium">
               Pricing
             </a>
           </nav>
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-dark-700 hover:text-primary-600">
-              Login
-            </Button>
+            <Button
+  variant="outline"
+  className="border border-primary-600 text-primary-600 hover:bg-primary-50 px-6">
+        Login
+    </Button>
             <Button className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6">
               Sign Up
             </Button>

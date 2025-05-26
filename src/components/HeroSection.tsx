@@ -37,7 +37,7 @@ const HeroSection = () => {
           <div className="relative animate-slide-in-right">
             <div className="relative bg-white rounded-2xl shadow-2xl p-8 hover-lift">
               <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="/hero-img.png"
                 alt="AI Pitch Deck Builder Interface" 
                 className="w-full h-auto rounded-lg"
               />
