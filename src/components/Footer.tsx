@@ -9,10 +9,19 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-center gap-2">
+  <div className="w-32 h-18 rounded-lg overflow-hidden flex items-center justify-center">
+  <img 
+    src="/logo-white.png" 
+    alt="Logo" 
+    className="w-full h-full object-contain"
+  />
+</div>
+  </div>
+              {/* <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">P</span>
-              </div>
-              <span className="text-xl font-space-grotesk font-bold">Instapitch</span>
+              </div> */}
+              {/* <span className="text-xl font-space-grotesk font-bold">Instapitch</span> */}
             </div>
             <p className="text-dark-300 leading-relaxed max-w-md">
               Empowering entrepreneurs worldwide to create compelling pitch decks that secure funding and drive business growth through the power of artificial intelligence.
@@ -46,7 +55,7 @@ const Footer = () => {
           <div className="text-dark-400 text-sm mb-4 md:mb-0">
             © 2024 Instapitch. All rights reserved.
           </div>
-          
+
           {/* Social Links */}
           {/* <div className="flex space-x-4">
             <a href="#" className="text-dark-400 hover:text-white transition-colors">

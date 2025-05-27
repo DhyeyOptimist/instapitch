@@ -11,11 +11,16 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">P</span>
-            </div>
-            <span className="text-xl font-space-grotesk font-bold text-dark-900">Instapitch</span>
-          </div>
+  
+<div className="w-32 h-18 rounded-lg overflow-hidden flex items-center justify-center">
+  <img 
+    src="/logo.svg" 
+    alt="Logo" 
+    className="w-full h-full object-contain"
+  />
+</div>
+  {/* <span className="text-xl font-space-grotesk font-bold text-dark-900"></span> */}
+</div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 ml-auto">
@@ -37,7 +42,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               variant="outline"
-              className="border border-primary-600 text-primary-600 hover:bg-primary-50 px-6 py-3 transition-all duration-300 hover:scale-105">
+              className="border border-primary-600 hover:bg-primary-50 ml-4 text-primary-600 px-6 py-3 transition-all duration-300 hover:scale-105">
               Login
             </Button>
             <Button className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">

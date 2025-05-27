@@ -1,7 +1,7 @@
 
 const SocialProof = () => {
   const companies = [
-    { name: 'TechCorp', logo: 'TC' },
+    { name: 'TechCorp', logo: '/public/algobulls.png' },
     { name: 'InnovateLab', logo: 'IL' },
     { name: 'StartupX', logo: 'SX' },
     { name: 'VentureOne', logo: 'V1' },
