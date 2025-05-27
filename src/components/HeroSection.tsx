@@ -72,7 +72,7 @@ const HeroSection = () => {
               <div ref={ctaRef} className="pt-4">
                 <Button 
                   size="lg" 
-                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-12 py-6 text-xl hover-lift transition-all duration-300 hover:scale-105"
+                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-12 py-6 text-xl hover-lift transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/25 animate-pulse-slow"
                 >
                   Sign up for free
                 </Button>
@@ -89,9 +89,14 @@ const HeroSection = () => {
               alt="AI Pitch Deck Builder Interface" 
               className="w-full h-auto rounded-2xl"
             />
-            {/* Floating Elements */}
-            <div className="absolute -top-6 -right-6 bg-secondary-500 text-white rounded-full w-20 h-20 flex items-center justify-center font-bold text-2xl animate-scale-in shadow-lg">
-              AI
+            {/* Enhanced AI Button */}
+            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-2xl px-6 py-4 flex items-center space-x-2 animate-scale-in shadow-lg">
+              <span className="font-bold text-2xl">AI</span>
+              <div className="flex space-x-1">
+                <span className="text-yellow-300 text-lg">✦</span>
+                <span className="text-yellow-300 text-sm">✦</span>
+                <span className="text-yellow-300 text-lg">✦</span>
+              </div>
             </div>
           </div>
         </div>

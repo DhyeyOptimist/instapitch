@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { gsap } from 'gsap';
@@ -20,7 +20,7 @@ const Testimonials = () => {
       founder: "Digvijay Pandey",
       company: "TechFlow",
       logo: "TF",
-      image: "/public/digvijaypandey.jpeg"
+      image: "/digvijaypandey.jpeg"
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ const Testimonials = () => {
       founder: "Gauri Kumar",
       company: "StartupLab",
       logo: "SL",
-      image: "/public/gauri_kumar.png"
+      image: "/gauri_kumar.png"
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const Testimonials = () => {
       founder: "Mayank Jani",
       company: "InnovateNow",
       logo: "IN",
-      image: "/public/mayank_jani.png"
+      image: "/mayank_jani.png"
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ const Testimonials = () => {
       founder: "Shashank Rai",
       company: "FutureVision",
       logo: "FV",
-      image: "/public/shashankrai.jpeg"
+      image: "/shashankrai.jpeg"
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ const Testimonials = () => {
       founder: "Vedansh Goyal",
       company: "NextGen",
       logo: "NG",
-      image: "/public/vedansh_goyal.png"
+      image: "/vedansh_goyal.png"
     }
   ];
 
@@ -113,7 +113,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-padding bg-dark-50">
+    <section ref={sectionRef} className="py-20 bg-dark-50">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 ref={titleRef} className="text-3xl md:text-4xl lg:text-5xl font-space-grotesk font-bold text-dark-900 mb-6">
@@ -124,55 +124,41 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
-        <div ref={cardsRef} className="relative max-w-7xl mx-auto">
-          <div className="flex items-center justify-center">
-            {/* Left Arrow */}
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevTestimonial}
-              className="absolute left-4 z-10 rounded-full border-dark-300 hover:bg-dark-100 w-12 h-12 shadow-lg"
-            >
-              <ChevronLeft size={24} />
-            </Button>
+        <div ref={cardsRef} className="relative max-w-5xl mx-auto">
+          <div className="flex items-center justify-center relative">
             
             {/* Cards Container */}
-            <div className="flex items-center justify-center w-full overflow-hidden px-20">
+            <div className="flex items-center justify-center w-full px-4">
               {getVisibleTestimonials().map((testimonial) => (
                 <div
                   key={`${testimonial.id}-${testimonial.position}`}
-                  className={`transition-all duration-500 mx-4 ${
+                  className={`transition-all duration-500 mx-2 ${
                     testimonial.position === 0
-                      ? 'scale-100 opacity-100 z-20 w-96'
-                      : 'scale-90 opacity-40 w-80'
-                  } ${
-                    testimonial.position === -1 ? 'transform -translate-x-8' : ''
-                  } ${
-                    testimonial.position === 1 ? 'transform translate-x-8' : ''
+                      ? 'scale-100 opacity-100 z-20 w-80'
+                      : 'scale-90 opacity-30 w-60'
                   }`}
                   style={{
-                    clipPath: testimonial.position !== 0 ? 'inset(0 20% 0 20%)' : 'none'
+                    transform: `translateX(${testimonial.position * 50}px) scale(${testimonial.position === 0 ? 1 : 0.85})`
                   }}
                 >
-                  <div className="bg-white rounded-2xl p-8 shadow-xl hover-lift min-h-[300px] flex flex-col justify-between">
-                    <div className="flex items-center space-x-4 mb-6">
+                  <div className="bg-white rounded-2xl p-6 shadow-xl hover-lift min-h-[280px] flex flex-col justify-between">
+                    <div className="flex items-center space-x-3 mb-4">
                       <img
                         src={testimonial.image}
                         alt={testimonial.founder}
-                        className="w-16 h-16 rounded-full object-cover border-2 border-primary-200"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-primary-200"
                       />
                       <div>
-                        <h4 className="font-semibold text-dark-900 text-lg">{testimonial.founder}</h4>
+                        <h4 className="font-semibold text-dark-900 text-base">{testimonial.founder}</h4>
                         <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded text-white text-xs flex items-center justify-center font-bold">
+                          <div className="w-6 h-6 bg-gradient-to-br from-primary-600 to-secondary-600 rounded text-white text-xs flex items-center justify-center font-bold">
                             {testimonial.logo}
                           </div>
-                          <span className="text-dark-600">{testimonial.company}</span>
+                          <span className="text-dark-600 text-sm">{testimonial.company}</span>
                         </div>
                       </div>
                     </div>
-                    <blockquote className="text-dark-700 leading-relaxed text-lg">
+                    <blockquote className="text-dark-700 leading-relaxed text-sm">
                       "{testimonial.quote}"
                     </blockquote>
                   </div>
@@ -180,28 +166,24 @@ const Testimonials = () => {
               ))}
             </div>
 
-            {/* Right Arrow */}
+            {/* Navigation Buttons */}
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={prevTestimonial}
+              className="absolute left-0 z-30 rounded-full border-dark-300 hover:bg-dark-100 w-10 h-10 shadow-lg"
+            >
+              <ChevronLeft size={20} />
+            </Button>
+
             <Button
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="absolute right-4 z-10 rounded-full border-dark-300 hover:bg-dark-100 w-12 h-12 shadow-lg"
+              className="absolute right-0 z-30 rounded-full border-dark-300 hover:bg-dark-100 w-10 h-10 shadow-lg"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} />
             </Button>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center space-x-3 mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-primary-600 w-8' : 'bg-dark-300'
-                }`}
-              />
-            ))}
           </div>
         </div>
       </div>
