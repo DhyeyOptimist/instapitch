@@ -28,11 +28,11 @@ const Header = () => {
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="blogs#home" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
+            <a href="/blogs" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
               Blogs
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
+            <a href="/pricing" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
               Pricing
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -71,19 +71,23 @@ const Header = () => {
               <a href="#home" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
                 Home
               </a>
-              <a href="#blogs" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/blogs" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
                 Blogs
               </a>
-              <a href="#pricing" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
+              <a href="/pricing" className="text-dark-700 hover:text-primary-600 transition-colors font-medium">
                 Pricing
               </a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="ghost" className="text-dark-700 hover:text-primary-600 justify-start">
-                  Login
-                </Button>
-                <Button className="bg-primary-600 hover:bg-primary-700 text-white font-semibold">
-                  Sign Up
-                </Button>
+                <a href="https://instapitch.io/login" rel="noopener noreferrer">
+                  <Button variant="ghost" className="text-dark-700 hover:text-primary-600 justify-start w-full">
+                    Login
+                  </Button>
+                </a>
+                <a href="https://instapitch.io/signup" rel="noopener noreferrer">
+                  <Button className="bg-primary-600 hover:bg-primary-700 text-white font-semibold w-full">
+                    Sign Up
+                  </Button>
+                </a>
               </div>
             </nav>
           </div>
