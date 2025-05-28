@@ -4,8 +4,8 @@ import HeroSection from '@/components/HeroSection';
 import SocialProof from '@/components/SocialProof';
 import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
+import Pricing from '@/components/Pricing';
 import Blog from '@/components/Blog';
-
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 
@@ -17,8 +17,8 @@ const Index = () => {
       <SocialProof />
       <HowItWorks />
       <Testimonials />
+      <Pricing />
       <Blog />
-
       <FinalCTA />
       <Footer />
     </div>
