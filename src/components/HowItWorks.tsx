@@ -137,7 +137,7 @@ const HowItWorks = () => {
                 <img 
                   src={steps[currentStep].image} 
                   alt={steps[currentStep].title}
-                  className="w-full h-80 object-cover transition-all duration-500"
+                  className="w-full h-80 object-cover transition-all duration-400"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>

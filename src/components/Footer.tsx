@@ -46,6 +46,8 @@ const Footer = () => {
               {/* <li><a href="#" className="hover:text-white transition-colors">Blog</a></li> */}
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://instapitch.io/about-us" className="hover:text-white transition-colors">About us</a></li>
+
             </ul>
           </div>
         </div>

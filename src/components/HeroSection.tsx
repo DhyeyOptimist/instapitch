@@ -71,12 +71,14 @@ const HeroSection = () => {
               </p>
               
               <div ref={ctaRef} className="pt-4">
+          <a href="https://instapitch.io/signup" rel="noopener noreferrer">
                 <Button 
                   size="lg" 
                   className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-12 py-6 text-xl hover-lift transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/25 animate-pulse-slow"
                 >
                   Sign up for free
                 </Button>
+          </a>
               </div>
             </div>
           </div>

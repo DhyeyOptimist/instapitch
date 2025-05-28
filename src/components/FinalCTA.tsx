@@ -49,13 +49,14 @@ const FinalCTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="https://instapitch.io/signup" rel="noopener noreferrer">
             <Button 
               size="lg"
               className="bg-white text-primary-600 hover:bg-primary-50 font-semibold px-12 py-6 text-lg hover-lift transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Start Building for Free
             </Button>
-            
+            </a>
           </div>
         </div>
       </div>

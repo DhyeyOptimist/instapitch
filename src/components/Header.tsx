@@ -28,11 +28,11 @@ const Header = () => {
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#blogs" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
+            <a href="blogs#home" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
               Blogs
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#pricing" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
+            <a href="https://instapitch.io/pricing" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
               Pricing
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -40,14 +40,19 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <a href="https://instapitch.io/login"  rel="noopener noreferrer">
             <Button
               variant="outline"
-              className="border border-primary-600 hover:bg-primary-50 ml-4 text-primary-600 px-6 py-3 transition-all duration-300 hover:scale-105">
+              className="border border-primary-600 hover:bg-primary-50 ml-8 text-primary-600 px-6 py-3 transition-all duration-300 hover:scale-105">
               Login
             </Button>
+            </a>
+
+            <a href="https://instapitch.io/signup" rel="noopener noreferrer">
             <Button className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
               Sign Up
             </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
