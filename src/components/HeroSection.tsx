@@ -93,9 +93,6 @@ const HeroSection = () => {
             <div className="absolute -top-6 -right-6 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-2xl px-6 py-4 flex items-center space-x-2 animate-scale-in shadow-lg">
               <span className="font-bold text-2xl">AI</span>
               <div className="flex space-x-1">
-                <span className="text-yellow-300 text-lg">✦</span>
-                <span className="text-yellow-300 text-sm">✦</span>
-                <span className="text-yellow-300 text-lg">✦</span>
               </div>
             </div>
           </div>
