@@ -112,7 +112,7 @@ const AIButton = ({
       </button>
       
       {/* Small indicator dot */}
-      <div 
+      {/* <div 
         className={`absolute -top-1 -right-1 w-2 h-2 rounded-full transition-all duration-300 ${
           loading ? 'animate-pulse' : ''
         }`}
@@ -120,7 +120,7 @@ const AIButton = ({
           background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
           boxShadow: '0 0 8px rgba(16, 185, 129, 0.5)'
         }}
-      />
+      /> */}
     </div>
   );
 };
