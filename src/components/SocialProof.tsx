@@ -1,14 +1,13 @@
-
 const SocialProof = () => {
   const companies = [
     { name: 'TechCorp', logo: '/algobulls.png', isImage: true },
-    { name: 'InnovateLab', logo: 'IL', isImage: false },
-    { name: 'StartupX', logo: 'SX', isImage: false },
-    { name: 'VentureOne', logo: 'V1', isImage: false },
-    { name: 'FutureBuilders', logo: 'FB', isImage: false },
-    { name: 'NextGen', logo: 'NG', isImage: false },
-    { name: 'Pioneer Co', logo: 'PC', isImage: false },
-    { name: 'Catalyst', logo: 'CT', isImage: false },
+    { name: 'InnovateLab', logo: '/l2.jpeg', isImage: true },
+    { name: 'StartupX', logo: '/l3.jpeg', isImage: true },
+    { name: 'VentureOne', logo: '/l4.jpeg', isImage: true },
+    { name: 'FutureBuilders', logo: '/l5.jpeg', isImage: true },
+    { name: 'NextGen', logo: 'l6.jpeg', isImage: true },
+    { name: 'Pioneer Co', logo: 'l7.jpeg', isImage: true },
+    { name: 'Catalyst', logo: 'l8.jpeg', isImage: true },
   ];
 
   return (
@@ -24,33 +23,29 @@ const SocialProof = () => {
             {/* First set */}
             {companies.map((company, index) => (
               <div key={index} className="flex-shrink-0 mx-8 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center border border-dark-200 p-2">
-                  {company.isImage ? (
-                    <img 
-                      src={company.logo} 
-                      alt={company.name} 
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    <span className="font-bold text-dark-700 text-sm">{company.logo}</span>
-                  )}
-                </div>
+                {company.isImage ? (
+                  <img 
+                    src={company.logo} 
+                    alt={company.name} 
+                    className="w-24 h-24 object-contain"
+                  />
+                ) : (
+                  <span className="font-bold text-dark-700 text-lg">{company.logo}</span>
+                )}
               </div>
             ))}
             {/* Duplicate set for seamless loop */}
             {companies.map((company, index) => (
               <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center border border-dark-200 p-2">
-                  {company.isImage ? (
-                    <img 
-                      src={company.logo} 
-                      alt={company.name} 
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    <span className="font-bold text-dark-700 text-sm">{company.logo}</span>
-                  )}
-                </div>
+                {company.isImage ? (
+                  <img 
+                    src={company.logo} 
+                    alt={company.name} 
+                    className="w-24 h-24 object-contain"
+                  />
+                ) : (
+                  <span className="font-bold text-dark-700 text-lg">{company.logo}</span>
+                )}
               </div>
             ))}
           </div>
