@@ -32,7 +32,7 @@ const Header = () => {
               Blogs
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="https://instapitch.io/pricing" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
+            <a href="" className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group">
               Pricing
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
