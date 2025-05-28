@@ -1,11 +1,5 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -76,115 +70,97 @@ const Testimonials = () => {
     return visible;
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(titleRef.current, 
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      gsap.fromTo(cardsRef.current, 
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-20 bg-dark-50">
-      <div className="container-custom">
+    <section ref={sectionRef} className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 ref={titleRef} className="text-3xl md:text-4xl lg:text-5xl font-space-grotesk font-bold text-dark-900 mb-6">
-            What Founders <span className="gradient-text">Say</span>
+          <h2 ref={titleRef} className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            What Founders <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Say</span>
           </h2>
-          <p className="text-lg text-dark-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Join thousands of successful entrepreneurs who've raised funding with Instapitch
           </p>
         </div>
 
-        <div ref={cardsRef} className="relative max-w-5xl mx-auto">
-          <div className="flex items-center justify-center relative">
-            
-            {/* Cards Container */}
-            <div className="flex items-center justify-center w-full px-4">
+        <div ref={cardsRef} className="relative max-w-6xl mx-auto">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevTestimonial}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+          >
+            <ChevronLeft size={20} className="text-gray-600" />
+          </button>
+
+          <button
+            onClick={nextTestimonial}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+          >
+            <ChevronRight size={20} className="text-gray-600" />
+          </button>
+
+          {/* Cards Container with proper side visibility */}
+          <div className="flex items-center justify-center">
+            <div className="flex items-stretch w-full" style={{ maxWidth: '1000px' }}>
               {getVisibleTestimonials().map((testimonial) => (
                 <div
                   key={`${testimonial.id}-${testimonial.position}`}
-                  className={`transition-all duration-500 mx-2 ${
+                  className={`transition-all duration-500 ${
                     testimonial.position === 0
-                      ? 'scale-100 opacity-100 z-20 w-80'
-                      : 'scale-90 opacity-30 w-60'
+                      ? 'flex-1 mx-4 z-20'  // Center card - full width
+                      : 'w-20 z-10'         // Side cards - only 20% visible (80px width)
                   }`}
                   style={{
-                    transform: `translateX(${testimonial.position * 50}px) scale(${testimonial.position === 0 ? 1 : 0.85})`
+                    opacity: testimonial.position === 0 ? 1 : 0.4,
                   }}
                 >
-                  <div className="bg-white rounded-2xl p-6 shadow-xl hover-lift min-h-[280px] flex flex-col justify-between">
-                    <div className="flex items-center space-x-3 mb-4">
+                  <div className={`bg-white rounded-2xl shadow-xl border border-gray-100 h-full ${
+                    testimonial.position === 0 ? 'p-8' : 'p-4 overflow-hidden'
+                  }`}>
+                    <div className={`flex items-center mb-4 ${
+                      testimonial.position === 0 ? 'space-x-4' : 'space-x-2'
+                    }`}>
                       <img
                         src={testimonial.image}
                         alt={testimonial.founder}
-                        className="w-12 h-12 rounded-full object-cover border-2 border-primary-200"
+                        className={`rounded-full object-cover border-2 border-blue-100 ${
+                          testimonial.position === 0 ? 'w-14 h-14' : 'w-8 h-8'
+                        }`}
                       />
-                      <div>
-                        <h4 className="font-semibold text-dark-900 text-base">{testimonial.founder}</h4>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-6 h-6 bg-gradient-to-br from-primary-600 to-secondary-600 rounded text-white text-xs flex items-center justify-center font-bold">
+                      <div className={testimonial.position === 0 ? '' : 'hidden'}>
+                        <h4 className="font-semibold text-gray-900 text-lg">{testimonial.founder}</h4>
+                        <div className="flex items-center space-x-2 mt-1">
+                          <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded text-white text-sm flex items-center justify-center font-bold">
                             {testimonial.logo}
                           </div>
-                          <span className="text-dark-600 text-sm">{testimonial.company}</span>
+                          <span className="text-gray-600 text-sm font-medium">{testimonial.company}</span>
                         </div>
                       </div>
                     </div>
-                    <blockquote className="text-dark-700 leading-relaxed text-sm">
-                      "{testimonial.quote}"
-                    </blockquote>
+                    {testimonial.position === 0 && (
+                      <blockquote className="text-gray-700 leading-relaxed text-base">
+                        "{testimonial.quote}"
+                      </blockquote>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* Navigation Buttons */}
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevTestimonial}
-              className="absolute left-0 z-30 rounded-full border-dark-300 hover:bg-dark-100 w-10 h-10 shadow-lg"
-            >
-              <ChevronLeft size={20} />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={nextTestimonial}
-              className="absolute right-0 z-30 rounded-full border-dark-300 hover:bg-dark-100 w-10 h-10 shadow-lg"
-            >
-              <ChevronRight size={20} />
-            </Button>
           </div>
+
+          {/* Dots Indicator */}
+          {/* <div className="flex justify-center mt-8 space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-blue-600 w-8'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div> */}
         </div>
       </div>
     </section>
