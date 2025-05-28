@@ -5,7 +5,7 @@ import SocialProof from '@/components/SocialProof';
 import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import Blog from '@/components/Blog';
-import TemplatesPreview from '@/components/TemplatesPreview';
+
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 
