@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AIButton from './AIButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,10 +91,8 @@ const HeroSection = () => {
               className="w-full h-auto rounded-2xl"
             />
             {/* Enhanced AI Button */}
-            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-2xl px-6 py-4 flex items-center space-x-2 animate-scale-in shadow-lg">
-              <span className="font-bold text-2xl">AI</span>
-              <div className="flex space-x-1">
-              </div>
+            <div className="absolute -top-8 -right-8">
+              <AIButton size="medium" />
             </div>
           </div>
         </div>
