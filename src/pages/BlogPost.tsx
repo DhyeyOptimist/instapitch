@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
@@ -219,8 +218,8 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
 
     const ctx = gsap.context(() => {
       gsap.fromTo(contentRef.current, 
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8 }
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
       );
     });
 
@@ -235,73 +234,76 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="pt-24">
+      <main className="pt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
-          <div className="py-8">
+          <div className="py-6">
             <Button
               onClick={() => navigate('/blogs')}
               variant="ghost"
-              className="text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200"
+              size="sm"
+              className="text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200 p-2"
             >
-              <ArrowLeft size={18} className="mr-2" />
+              <ArrowLeft size={16} className="mr-2" />
               Back to Articles
             </Button>
           </div>
 
-          <article ref={contentRef}>
+          <article ref={contentRef} className="pb-16">
             {/* Article Header */}
-            <header className="mb-12 pb-8 border-b border-slate-200">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight font-space-grotesk">
+            <header className="mb-10">
+              <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 {currentPost.title}
               </h1>
               
-              <div className="flex flex-wrap items-center gap-6 text-slate-600 text-sm mb-8">
-                <div className="flex items-center gap-2">
-                  <User size={16} />
+              {/* Meta Information */}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
+                <div className="flex items-center gap-1.5">
+                  <User size={14} />
                   <span>{currentPost.author}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Calendar size={16} />
+                <div className="flex items-center gap-1.5">
+                  <Calendar size={14} />
                   <span>{new Date(currentPost.date).toLocaleDateString('en-US', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
                   })}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock size={16} />
+                <div className="flex items-center gap-1.5">
+                  <Clock size={14} />
                   <span>{currentPost.readTime}</span>
                 </div>
               </div>
 
-              {/* Hero Image */}
-              <div className="rounded-xl overflow-hidden shadow-lg">
+              {/* Hero Image - Smaller and cleaner */}
+              <div className="rounded-lg overflow-hidden shadow-sm mb-8">
                 <img 
                   src={currentPost.image} 
                   alt={currentPost.title}
-                  className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  className="w-full h-48 md:h-56 object-cover"
                 />
+              </div>
+
+              {/* Excerpt */}
+              <div className="text-lg text-slate-700 leading-relaxed mb-8 p-4 bg-slate-50 rounded-lg border-l-4 border-blue-500">
+                {currentPost.excerpt}
               </div>
             </header>
 
-            {/* Article Content */}
-            <div className="prose prose-lg prose-slate max-w-none">
-              <div className="text-xl text-slate-700 leading-relaxed mb-8 font-medium border-l-4 border-blue-500 pl-6 bg-slate-50 py-4 rounded-r-lg">
-                {currentPost.excerpt}
-              </div>
-              
-              <div className="space-y-6">
+            {/* Article Content - Clean Typography */}
+            <div className="prose prose-slate max-w-none">
+              <div className="space-y-6 text-slate-800 leading-relaxed">
                 {currentPost.content.split('\n\n').map((paragraph, index) => {
                   if (paragraph.startsWith('## ')) {
                     return (
-                      <h2 key={index} className="text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6 font-space-grotesk">
+                      <h2 key={index} className="text-xl md:text-2xl font-semibold text-slate-900 mt-8 mb-4 border-b border-slate-200 pb-2">
                         {paragraph.replace('## ', '')}
                       </h2>
                     );
                   }
                   return (
-                    <p key={index} className="text-lg leading-relaxed text-slate-700 mb-6">
+                    <p key={index} className="text-base leading-7 text-slate-700">
                       {paragraph}
                     </p>
                   );
@@ -309,18 +311,19 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
               </div>
             </div>
 
-            {/* Article Footer */}
-            <footer className="mt-16 pt-8 border-t border-slate-200">
-              <div className="bg-slate-50 rounded-xl p-8 text-center">
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">
+            {/* Article Footer - Clean CTA */}
+            <footer className="mt-12 pt-8 border-t border-slate-200">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 text-center">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   Ready to Create Your Perfect Pitch Deck?
                 </h3>
-                <p className="text-slate-600 mb-6">
+                <p className="text-slate-600 mb-4 text-sm">
                   Join thousands of entrepreneurs who have successfully raised funding with our platform.
                 </p>
                 <Button 
                   onClick={() => navigate('/')}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold transition-all duration-200"
+                  size="sm"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 font-medium transition-all duration-200"
                 >
                   Get Started Today
                 </Button>

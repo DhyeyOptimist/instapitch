@@ -22,25 +22,25 @@ const PricingPage = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out"
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "power2.out"
         }
       );
 
-      // Cards animation
+      // Cards animation - smoother and faster
       gsap.fromTo(cardsRef.current.children, 
-        { opacity: 0, y: 50, scale: 0.95 },
+        { opacity: 0, y: 30, scale: 0.98 },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: cardsRef.current,
-            start: "top 80%",
+            start: "top 85%",
             end: "bottom 20%",
             toggleActions: "play none none reverse"
           }
@@ -148,8 +148,8 @@ const PricingPage = () => {
                     relative h-full rounded-3xl p-8 
                     bg-white/40 backdrop-blur-xl border border-white/20
                     shadow-2xl hover:shadow-3xl
-                    transition-all duration-300 ease-out
-                    hover:scale-[1.02] hover:bg-white/50
+                    transition-all duration-200 ease-out
+                    hover:scale-[1.01] hover:bg-white/50
                     ${plan.popular ? 'ring-2 ring-purple-500/20' : ''}
                   `}>
                     {/* Popular Badge */}
@@ -162,11 +162,11 @@ const PricingPage = () => {
                     )}
 
                     {/* Gradient Border Effect */}
-                    <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${plan.borderGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm`}></div>
+                    <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${plan.borderGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10 blur-sm`}></div>
 
                     {/* Header */}
                     <div className="text-center mb-8">
-                      <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${plan.gradient} backdrop-blur-sm flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${plan.gradient} backdrop-blur-sm flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-200`}>
                         {plan.icon}
                       </div>
                       
@@ -196,7 +196,7 @@ const PricingPage = () => {
                     <ul className="space-y-4 mb-8">
                       {plan.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start gap-3 group/item">
-                          <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover/item:scale-110 transition-transform duration-200">
+                          <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover/item:scale-105 transition-transform duration-150">
                             <Check className="w-3 h-3 text-white" />
                           </div>
                           <span className="text-slate-700 leading-relaxed">{feature}</span>
@@ -206,15 +206,15 @@ const PricingPage = () => {
 
                     {/* CTA Button */}
                     <Button
-                      className={`w-full py-6 text-lg font-semibold transition-all duration-300 group/btn ${
+                      className={`w-full py-6 text-lg font-semibold transition-all duration-200 group/btn ${
                         plan.popular
                           ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-xl'
                           : `bg-gradient-to-r ${plan.hoverGradient} text-white shadow-lg hover:shadow-xl`
-                      } hover:scale-[1.02] active:scale-95`}
+                      } hover:scale-[1.01] active:scale-95`}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {plan.cta}
-                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-150" />
                       </span>
                     </Button>
                   </div>
@@ -234,7 +234,7 @@ const PricingPage = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-slate-300/50 hover:bg-white/50 text-slate-700 px-8 py-4 font-semibold backdrop-blur-sm hover:scale-105 transition-all duration-300"
+                  className="border-2 border-slate-300/50 hover:bg-white/50 text-slate-700 px-8 py-4 font-semibold backdrop-blur-sm hover:scale-102 transition-all duration-200"
                 >
                   <span className="flex items-center gap-2">
                     Contact Our Team
