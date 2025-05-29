@@ -56,14 +56,7 @@ const Footer = () => {
                   Features
                 </button>
               </li>
-              <li>
-                <button 
-                  onClick={() => handleNavigation('/#templates')}
-                  className="hover:text-white transition-all duration-300 text-left hover:translate-x-1 hover:text-primary-400"
-                >
-                  Templates
-                </button>
-              </li>
+              
               <li>
                 <button 
                   onClick={() => handleNavigation('/pricing')}
@@ -87,14 +80,7 @@ const Footer = () => {
                   Careers
                 </button>
               </li>
-              <li>
-                <button 
-                  onClick={() => handleNavigation('/contact')}
-                  className="hover:text-white transition-all duration-300 text-left hover:translate-x-1 hover:text-primary-400"
-                >
-                  Contact
-                </button>
-              </li>
+              
               <li>
                 <button 
                   onClick={() => handleNavigation('/about')}
