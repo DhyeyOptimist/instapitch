@@ -2,13 +2,13 @@ import { useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { gsap } from 'gsap';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+// import { gsap } from 'gsap';
+// import Header from '@/components/Header';
+// import Footer from '@/components/Footer';
 
 const BlogPost = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
+  const { id } = useParams();
   const contentRef = useRef(null);
 
   const blogPosts = [
@@ -215,14 +215,14 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
       return;
     }
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(contentRef.current, 
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
-      );
-    });
-
-    return () => ctx.revert();
+    // Animation would go here with GSAP
+    // const ctx = gsap.context(() => {
+    //   gsap.fromTo(contentRef.current, 
+    //     { opacity: 0, y: 20 },
+    //     { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+    //   );
+    // });
+    // return () => ctx.revert();
   }, [currentPost, navigate]);
 
   if (!currentPost) {
@@ -230,72 +230,74 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      
-      <main className="pt-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-6">
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100">
+      {/* <Header /> */}
+      <main className="pt-24 pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8">
+          <div className="mb-8">
             <Button
               onClick={() => navigate('/blogs')}
               variant="ghost"
               size="sm"
-              className="text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200 p-2"
+              className="text-slate-500 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 p-2 rounded-full shadow-none border border-slate-200"
             >
               <ArrowLeft size={16} className="mr-2" />
               Back to Blog
             </Button>
           </div>
 
-          <article ref={contentRef} className="pb-16">
-            <header className="mb-10">
-              <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+          <article ref={contentRef} className="bg-white/90 rounded-3xl shadow-xl p-8 md:p-12 border border-slate-100">
+            <header className="mb-12 text-center">
+              <div className="uppercase tracking-widest text-xs text-blue-600 font-semibold mb-2">Blog</div>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">
                 {currentPost.title}
               </h1>
-              
-              <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
-                
-                <div className="flex items-center gap-1.5">
-                  <Calendar size={14} />
+              <div className="text-slate-500 text-lg font-light mb-6 max-w-2xl mx-auto">
+                {currentPost.excerpt}
+              </div>
+              <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-slate-500 mb-10">
+                <div className="flex items-center gap-2">
+                  <Calendar size={16} />
                   <span>
-  {new Date(currentPost.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  })}
-</span>
+                    {new Date(currentPost.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <Clock size={14} />
+                <div className="flex items-center gap-2">
+                  <Clock size={16} />
                   <span>{currentPost.readTime}</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <User size={16} />
+                  <span>{currentPost.author}</span>
+                </div>
               </div>
-
-              <div className="rounded-lg overflow-hidden shadow-sm mb-8">
-                <img 
-                  src={currentPost.image} 
-                  alt={currentPost.title}
-                  className="w-full h-48 md:h-56 object-cover"
-                />
-              </div>
-
-              <div className="text-lg text-slate-700 leading-relaxed mb-8 p-4 bg-slate-50 rounded-lg border-l-4 border-blue-500">
-                {currentPost.excerpt}
+              <div className="flex justify-center">
+                <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 w-full max-w-2xl">
+                  <img 
+                    src={currentPost.image} 
+                    alt={currentPost.title}
+                    className="w-full h-64 md:h-80 object-cover"
+                  />
+                </div>
               </div>
             </header>
 
-            <div className="prose prose-slate max-w-none">
-              <div className="space-y-6 text-slate-800 leading-relaxed">
+            <div className="prose prose-xl prose-slate max-w-none mx-auto border-l-4 border-blue-100 pl-6 bg-white/80 py-6 rounded-xl shadow-sm">
+              <div className="space-y-8">
                 {currentPost.content.split('\n\n').map((paragraph, index) => {
                   if (paragraph.startsWith('## ')) {
                     return (
-                      <h2 key={index} className="text-xl md:text-2xl font-semibold text-slate-900 mt-8 mb-4 border-b border-slate-200 pb-2">
+                      <h2 key={index} className="text-lg md:text-xl font-medium text-slate-800 mt-8 mb-4 first:mt-0">
                         {paragraph.replace('## ', '')}
                       </h2>
                     );
                   }
                   return (
-                    <p key={index} className="text-base leading-7 text-slate-700">
+                    <p key={index} className="text-lg leading-8 text-slate-700 font-light tracking-wide">
                       {paragraph}
                     </p>
                   );
@@ -303,18 +305,18 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
               </div>
             </div>
 
-            <footer className="mt-3 pt-8 border-t border-slate-200">
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 text-center">
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">
+            <footer className="mt-16 pt-8">
+              <div className="bg-gradient-to-r from-blue-50 via-slate-50 to-blue-100 rounded-2xl p-10 text-center shadow-md border border-slate-100">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-3">
                   Ready to Create Your Perfect Pitch Deck?
                 </h3>
-                <p className="text-slate-600 mb-4 text-sm">
+                <p className="text-slate-600 mb-6 text-lg leading-relaxed max-w-2xl mx-auto">
                   Join thousands of entrepreneurs who have successfully raised funding with our platform.
                 </p>
                 <Button 
                   onClick={() => navigate('/')}
-                  size="sm"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 font-medium transition-all duration-200"
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 font-medium rounded-full shadow-lg transition-all duration-200"
                 >
                   Get Started Today
                 </Button>
@@ -323,8 +325,7 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
           </article>
         </div>
       </main>
-
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -105,9 +105,7 @@ const Testimonials = () => {
                   <div>
                     <h4 className="font-bold text-gray-900 text-2xl mb-2">{currentTestimonial.founder}</h4>
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg text-white text-lg flex items-center justify-center font-bold shadow-md">
-                        {currentTestimonial.logo}
-                      </div>
+                      
                       <span className="text-gray-600 text-lg font-semibold">{currentTestimonial.company}</span>
                     </div>
                   </div>

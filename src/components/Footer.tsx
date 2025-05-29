@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
@@ -12,6 +11,7 @@ const Footer = () => {
       window.open(path, '_blank', 'noopener,noreferrer');
     } else {
       navigate(path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 

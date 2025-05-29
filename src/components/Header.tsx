@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,6 +15,7 @@ const Header = () => {
   const handleNavClick = (href: string) => {
     if (href.startsWith('/')) {
       navigate(href);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       window.location.href = href;
     }
@@ -67,15 +67,7 @@ const Header = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
             <div className="relative">
-              <button 
-                onClick={toggleContact}
-                className="text-dark-700 hover:text-primary-600 font-medium transition-all duration-300 relative group px-2 py-1 rounded-lg hover:bg-primary-50/50 active:scale-95"
-              >
-                Contact Us
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              
-              {/* Contact Dropdown */}
+
               {isContactOpen && (
                 <div className="absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-6 z-50">
                   <div className="flex justify-between items-center mb-4">
@@ -88,15 +80,7 @@ const Header = () => {
                     </button>
                   </div>
                   <div className="space-y-4 text-sm">
-                    <div>
-                      <p className="font-medium text-dark-700 mb-1">Email Us:</p>
-                      <a 
-                        href="mailto:founder@impactfulpitch.com" 
-                        className="text-primary-600 hover:text-primary-700"
-                      >
-                        founder@impactfulpitch.com
-                      </a>
-                    </div>
+                    
                     <div>
                       <p className="font-medium text-dark-700 mb-1">Call Us:</p>
                       <a 
