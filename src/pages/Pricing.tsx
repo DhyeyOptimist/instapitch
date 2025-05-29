@@ -97,9 +97,9 @@ const PricingPage = () => {
       features: [
         "Agencies, consultants, and large teams",
         "Unlimited team access and collaboration tools",
-        "Annual credits pool based on usage volume"
+        "Annual credits pool based on usage volume*"
       ],
-      cta: "Contact Sales",
+      cta: "Contact us",
       popular: false,
       gradient: "from-gray-500/20 to-slate-500/20",
       borderGradient: "from-gray-500/30 to-slate-500/30"
@@ -130,11 +130,11 @@ const PricingPage = () => {
                 Start for free and scale as you grow. No hidden fees, no surprises.
               </p>
               <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
-                <Check className="w-4 h-4 text-green-500" />
-                <span>30-day money-back guarantee</span>
-                <span className="mx-2">•</span>
-                <Check className="w-4 h-4 text-green-500" />
-                <span>Cancel anytime</span>
+                {/* <Check className="w-4 h-4 text-green-500" />
+
+
+                <Check className="w-4 h-4 text-green-500" /> */}
+
               </div>
             </div>
 
@@ -241,7 +241,7 @@ const PricingPage = () => {
                   className="border-2 border-slate-300/50 hover:bg-white/50 text-slate-700 px-8 py-4 font-semibold backdrop-blur-sm hover:scale-105 transition-all duration-300"
                 >
                   <span className="flex items-center gap-2">
-                    Contact Our Sales Team
+                    Contact Our Team
                     <ArrowRight className="w-5 h-5" />
                   </span>
                 </Button>
