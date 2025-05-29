@@ -1,8 +1,10 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const cardsRef = useRef(null);
@@ -51,27 +53,23 @@ const Testimonials = () => {
   ];
 
   const nextTestimonial = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
   const prevTestimonial = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
-  const getVisibleTestimonials = () => {
-    const visible = [];
-    for (let i = -1; i <= 1; i++) {
-      const index = (currentIndex + i + testimonials.length) % testimonials.length;
-      visible.push({
-        ...testimonials[index],
-        position: i
-      });
-    }
-    return visible;
-  };
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-50">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 ref={titleRef} className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -82,72 +80,74 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div ref={cardsRef} className="relative max-w-6xl mx-auto">
+        <div ref={cardsRef} className="relative max-w-4xl mx-auto">
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+            disabled={isAnimating}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl"
           >
-            <ChevronLeft size={20} className="text-gray-600" />
+            <ChevronLeft size={24} className="text-gray-600 transition-transform duration-300 hover:scale-110" />
           </button>
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+            disabled={isAnimating}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl"
           >
-            <ChevronRight size={20} className="text-gray-600" />
+            <ChevronRight size={24} className="text-gray-600 transition-transform duration-300 hover:scale-110" />
           </button>
 
-          {/* Cards Container with proper side visibility */}
-          <div className="flex items-center justify-center">
-            <div className="flex items-stretch w-full" style={{ maxWidth: '1000px' }}>
-              {getVisibleTestimonials().map((testimonial) => (
-                <div
-                  key={`${testimonial.id}-${testimonial.position}`}
-                  className={`transition-all duration-500 ${
-                    testimonial.position === 0
-                      ? 'flex-1 mx-4 z-20'  // Center card - full width
-                      : 'w-20 z-10'         // Side cards - only 20% visible (80px width)
-                  }`}
-                  style={{
-                    opacity: testimonial.position === 0 ? 1 : 0.4,
-                  }}
-                >
-                  <div className={`bg-white rounded-2xl shadow-xl border border-gray-100 h-full ${
-                    testimonial.position === 0 ? 'p-8' : 'p-4 overflow-hidden'
-                  }`}>
-                    <div className={`flex items-center mb-4 ${
-                      testimonial.position === 0 ? 'space-x-4' : 'space-x-2'
-                    }`}>
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.founder}
-                        className={`rounded-full object-cover border-2 border-blue-100 ${
-                          testimonial.position === 0 ? 'w-14 h-14' : 'w-8 h-8'
-                        }`}
-                      />
-                      <div className={testimonial.position === 0 ? '' : 'hidden'}>
-                        <h4 className="font-semibold text-gray-900 text-lg">{testimonial.founder}</h4>
-                        <div className="flex items-center space-x-2 mt-1">
-                          <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded text-white text-sm flex items-center justify-center font-bold">
-                            {testimonial.logo}
-                          </div>
-                          <span className="text-gray-600 text-sm font-medium">{testimonial.company}</span>
-                        </div>
+          {/* Single Centered Card */}
+          <div className="flex justify-center px-20">
+            <div 
+              key={currentTestimonial.id}
+              className={`w-full max-w-3xl transition-all duration-500 transform ${isAnimating ? 'scale-95 opacity-70' : 'scale-100 opacity-100'}`}
+            >
+              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12 hover:shadow-3xl transition-all duration-300 hover:scale-105">
+                <div className="flex items-center mb-8 space-x-6">
+                  <img
+                    src={currentTestimonial.image}
+                    alt={currentTestimonial.founder}
+                    className="w-20 h-20 rounded-full object-cover border-4 border-blue-100 shadow-lg transition-transform duration-300 hover:scale-110"
+                  />
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-2xl mb-2">{currentTestimonial.founder}</h4>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg text-white text-lg flex items-center justify-center font-bold shadow-md">
+                        {currentTestimonial.logo}
                       </div>
+                      <span className="text-gray-600 text-lg font-semibold">{currentTestimonial.company}</span>
                     </div>
-                    {testimonial.position === 0 && (
-                      <blockquote className="text-gray-700 leading-relaxed text-base">
-                        "{testimonial.quote}"
-                      </blockquote>
-                    )}
                   </div>
                 </div>
-              ))}
+                <blockquote className="text-gray-700 leading-relaxed text-xl font-medium italic">
+                  "{currentTestimonial.quote}"
+                </blockquote>
+              </div>
             </div>
           </div>
 
-
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-8 space-x-3">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (!isAnimating) {
+                    setIsAnimating(true);
+                    setCurrentIndex(index);
+                    setTimeout(() => setIsAnimating(false), 500);
+                  }
+                }}
+                className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                  index === currentIndex 
+                    ? 'bg-blue-600 scale-125' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

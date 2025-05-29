@@ -1,3 +1,4 @@
+
 const SocialProof = () => {
   const companies = [
     { name: 'TechCorp', logo: '/algobulls.png', isImage: true },
@@ -11,10 +12,10 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="py-16 bg-dark-50">
+    <section className="py-20 bg-white">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <p className="text-dark-600 font-medium">Trusted by Teams Globally</p>
+        <div className="text-center mb-16">
+          <p className="text-dark-600 font-medium text-lg">Trusted by Teams Globally</p>
         </div>
         
         {/* Scrolling Logo Strip */}
@@ -22,29 +23,29 @@ const SocialProof = () => {
           <div className="flex animate-scroll-left">
             {/* First set */}
             {companies.map((company, index) => (
-              <div key={index} className="flex-shrink-0 mx-8 flex items-center justify-center">
+              <div key={index} className="flex-shrink-0 mx-12 flex items-center justify-center group">
                 {company.isImage ? (
                   <img 
                     src={company.logo} 
                     alt={company.name} 
-                    className="w-24 h-24 object-contain"
+                    className="w-32 h-32 object-contain transition-all duration-300 group-hover:scale-110 group-hover:brightness-110 filter grayscale hover:grayscale-0"
                   />
                 ) : (
-                  <span className="font-bold text-dark-700 text-lg">{company.logo}</span>
+                  <span className="font-bold text-dark-700 text-xl transition-all duration-300 group-hover:text-primary-600 group-hover:scale-110">{company.logo}</span>
                 )}
               </div>
             ))}
             {/* Duplicate set for seamless loop */}
             {companies.map((company, index) => (
-              <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8 flex items-center justify-center">
+              <div key={`duplicate-${index}`} className="flex-shrink-0 mx-12 flex items-center justify-center group">
                 {company.isImage ? (
                   <img 
                     src={company.logo} 
                     alt={company.name} 
-                    className="w-24 h-24 object-contain"
+                    className="w-32 h-32 object-contain transition-all duration-300 group-hover:scale-110 group-hover:brightness-110 filter grayscale hover:grayscale-0"
                   />
                 ) : (
-                  <span className="font-bold text-dark-700 text-lg">{company.logo}</span>
+                  <span className="font-bold text-dark-700 text-xl transition-all duration-300 group-hover:text-primary-600 group-hover:scale-110">{company.logo}</span>
                 )}
               </div>
             ))}
