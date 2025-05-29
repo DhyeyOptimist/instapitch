@@ -47,7 +47,7 @@ const Blogs = () => {
       title: "Building a Compelling Business Model Slide",
       excerpt: "Your business model slide can make or break your pitch. Learn how to clearly communicate how your startup will make money and scale effectively.",
       date: "2025-3-05",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop"
+      image: "https://theindianeye.com/wp-content/uploads/2024/03/Hirav-column.jpg"
     },
     {
       id: 6,
