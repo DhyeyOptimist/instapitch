@@ -90,7 +90,7 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => handleNavigation('')}
+                  onClick={() => handleNavigation('/about')}
                   className="hover:text-white transition-all duration-300 text-left hover:translate-x-1 hover:text-primary-400"
                 >
                   About us

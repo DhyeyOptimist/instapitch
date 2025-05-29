@@ -4,7 +4,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const cardsRef = useRef(null);
@@ -53,17 +52,11 @@ const Testimonials = () => {
   ];
 
   const nextTestimonial = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    setTimeout(() => setIsAnimating(false), 500);
   };
 
   const prevTestimonial = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    setTimeout(() => setIsAnimating(false), 500);
   };
 
   const currentTestimonial = testimonials[currentIndex];
@@ -84,16 +77,14 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
-            disabled={isAnimating}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 hover:shadow-xl"
           >
             <ChevronLeft size={24} className="text-gray-600 transition-transform duration-300 hover:scale-110" />
           </button>
 
           <button
             onClick={nextTestimonial}
-            disabled={isAnimating}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 hover:shadow-xl"
           >
             <ChevronRight size={24} className="text-gray-600 transition-transform duration-300 hover:scale-110" />
           </button>
@@ -102,7 +93,7 @@ const Testimonials = () => {
           <div className="flex justify-center px-20">
             <div 
               key={currentTestimonial.id}
-              className={`w-full max-w-3xl transition-all duration-500 transform ${isAnimating ? 'scale-95 opacity-70' : 'scale-100 opacity-100'}`}
+              className="w-full max-w-3xl transition-all duration-300 transform"
             >
               <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12 hover:shadow-3xl transition-all duration-300 hover:scale-105">
                 <div className="flex items-center mb-8 space-x-6">
@@ -133,13 +124,7 @@ const Testimonials = () => {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  if (!isAnimating) {
-                    setIsAnimating(true);
-                    setCurrentIndex(index);
-                    setTimeout(() => setIsAnimating(false), 500);
-                  }
-                }}
+                onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
                   index === currentIndex 
                     ? 'bg-blue-600 scale-125' 

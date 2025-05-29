@@ -23,29 +23,29 @@ const SocialProof = () => {
           <div className="flex animate-scroll-left">
             {/* First set */}
             {companies.map((company, index) => (
-              <div key={index} className="flex-shrink-0 mx-12 flex items-center justify-center group">
+              <div key={index} className="flex-shrink-0 mx-12 flex items-center justify-center">
                 {company.isImage ? (
                   <img 
                     src={company.logo} 
                     alt={company.name} 
-                    className="w-32 h-32 object-contain transition-all duration-300 group-hover:scale-110 group-hover:brightness-110 filter grayscale hover:grayscale-0"
+                    className="w-32 h-32 object-contain filter grayscale"
                   />
                 ) : (
-                  <span className="font-bold text-dark-700 text-xl transition-all duration-300 group-hover:text-primary-600 group-hover:scale-110">{company.logo}</span>
+                  <span className="font-bold text-dark-700 text-xl">{company.logo}</span>
                 )}
               </div>
             ))}
             {/* Duplicate set for seamless loop */}
             {companies.map((company, index) => (
-              <div key={`duplicate-${index}`} className="flex-shrink-0 mx-12 flex items-center justify-center group">
+              <div key={`duplicate-${index}`} className="flex-shrink-0 mx-12 flex items-center justify-center">
                 {company.isImage ? (
                   <img 
                     src={company.logo} 
                     alt={company.name} 
-                    className="w-32 h-32 object-contain transition-all duration-300 group-hover:scale-110 group-hover:brightness-110 filter grayscale hover:grayscale-0"
+                    className="w-32 h-32 object-contain filter grayscale"
                   />
                 ) : (
-                  <span className="font-bold text-dark-700 text-xl transition-all duration-300 group-hover:text-primary-600 group-hover:scale-110">{company.logo}</span>
+                  <span className="font-bold text-dark-700 text-xl">{company.logo}</span>
                 )}
               </div>
             ))}
