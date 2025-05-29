@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { gsap } from 'gsap';
 import Header from '@/components/Header';
@@ -51,7 +51,8 @@ Clearly state how much funding you're seeking and how you plan to use the money.
 End with clear next steps and a strong call to action. Make it easy for investors to follow up with you.`,
       date: "2024-12-15",
       readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+      author: "Editorial Team"
     },
     {
       id: 2,
@@ -77,7 +78,8 @@ Some AI tools can provide real-time feedback on your presentation delivery, help
 The future of pitch deck creation is becoming increasingly intelligent, allowing entrepreneurs to focus more on their business strategy while AI handles the optimization of their presentation.`,
       date: "2024-12-12",
       readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
+      author: "Editorial Team"
     },
     {
       id: 3,
@@ -109,7 +111,8 @@ Not showing evidence that your solution works or that there's market demand make
 Avoiding these common mistakes can significantly improve your chances of securing the funding your startup needs to grow.`,
       date: "2024-12-10",
       readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
+      author: "Editorial Team"
     },
     {
       id: 4,
@@ -138,7 +141,8 @@ Most investment decisions aren't made in the room. Design your pitch to be memor
 By understanding these psychological factors, you can craft a pitch that not only informs but also persuades and motivates investors to take action.`,
       date: "2024-12-08",
       readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop",
+      author: "Editorial Team"
     },
     {
       id: 5,
@@ -167,7 +171,8 @@ Clearly show when and how your company will become profitable. Include assumptio
 A well-crafted business model slide demonstrates that you have a clear path to building a sustainable, profitable business that can generate returns for investors.`,
       date: "2024-12-05",
       readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
+      author: "Editorial Team"
     },
     {
       id: 6,
@@ -199,7 +204,8 @@ Conclude with a compelling vision of the future that your company is working to 
 Master storytelling can transform a good pitch deck into an unforgettable presentation that motivates investors to act.`,
       date: "2024-12-03",
       readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop",
+      author: "Editorial Team"
     }
   ];
 
@@ -229,67 +235,97 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="pt-32 pb-20">
-        <div className="container-custom max-w-4xl">
+      <main className="pt-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
-          <Button
-            onClick={() => navigate('/blogs')}
-            variant="ghost"
-            className="mb-8 text-dark-600 hover:text-dark-900"
-          >
-            <ArrowLeft size={20} className="mr-2" />
-            Back to Blog
-          </Button>
+          <div className="py-8">
+            <Button
+              onClick={() => navigate('/blogs')}
+              variant="ghost"
+              className="text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200"
+            >
+              <ArrowLeft size={18} className="mr-2" />
+              Back to Articles
+            </Button>
+          </div>
 
-          <article ref={contentRef} className="prose prose-lg max-w-none">
-            {/* Hero Image */}
-            <div className="mb-8 rounded-2xl overflow-hidden">
-              <img 
-                src={currentPost.image} 
-                alt={currentPost.title}
-                className="w-full h-64 md:h-80 object-cover"
-              />
-            </div>
-
+          <article ref={contentRef}>
             {/* Article Header */}
-            <header className="mb-12">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-space-grotesk font-bold text-dark-900 mb-6 leading-tight">
+            <header className="mb-12 pb-8 border-b border-slate-200">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight font-space-grotesk">
                 {currentPost.title}
               </h1>
               
-              <div className="flex items-center gap-6 text-dark-600 text-sm">
+              <div className="flex flex-wrap items-center gap-6 text-slate-600 text-sm mb-8">
+                <div className="flex items-center gap-2">
+                  <User size={16} />
+                  <span>{currentPost.author}</span>
+                </div>
                 <div className="flex items-center gap-2">
                   <Calendar size={16} />
-                  {new Date(currentPost.date).toLocaleDateString('en-US', { 
+                  <span>{new Date(currentPost.date).toLocaleDateString('en-US', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
-                  })}
+                  })}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock size={16} />
-                  {currentPost.readTime}
+                  <span>{currentPost.readTime}</span>
                 </div>
+              </div>
+
+              {/* Hero Image */}
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src={currentPost.image} 
+                  alt={currentPost.title}
+                  className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                />
               </div>
             </header>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none text-dark-700 leading-relaxed">
-              {currentPost.content.split('\n\n').map((paragraph, index) => {
-                if (paragraph.startsWith('## ')) {
+            <div className="prose prose-lg prose-slate max-w-none">
+              <div className="text-xl text-slate-700 leading-relaxed mb-8 font-medium border-l-4 border-blue-500 pl-6 bg-slate-50 py-4 rounded-r-lg">
+                {currentPost.excerpt}
+              </div>
+              
+              <div className="space-y-6">
+                {currentPost.content.split('\n\n').map((paragraph, index) => {
+                  if (paragraph.startsWith('## ')) {
+                    return (
+                      <h2 key={index} className="text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6 font-space-grotesk">
+                        {paragraph.replace('## ', '')}
+                      </h2>
+                    );
+                  }
                   return (
-                    <h2 key={index} className="text-2xl font-space-grotesk font-bold text-dark-900 mt-12 mb-6">
-                      {paragraph.replace('## ', '')}
-                    </h2>
+                    <p key={index} className="text-lg leading-relaxed text-slate-700 mb-6">
+                      {paragraph}
+                    </p>
                   );
-                }
-                return (
-                  <p key={index} className="mb-6 text-lg leading-relaxed">
-                    {paragraph}
-                  </p>
-                );
-              })}
+                })}
+              </div>
             </div>
+
+            {/* Article Footer */}
+            <footer className="mt-16 pt-8 border-t border-slate-200">
+              <div className="bg-slate-50 rounded-xl p-8 text-center">
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                  Ready to Create Your Perfect Pitch Deck?
+                </h3>
+                <p className="text-slate-600 mb-6">
+                  Join thousands of entrepreneurs who have successfully raised funding with our platform.
+                </p>
+                <Button 
+                  onClick={() => navigate('/')}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold transition-all duration-200"
+                >
+                  Get Started Today
+                </Button>
+              </div>
+            </footer>
           </article>
         </div>
       </main>

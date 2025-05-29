@@ -67,7 +67,8 @@ const PricingPage = () => {
       cta: "Get Started",
       popular: false,
       gradient: "from-blue-500/20 to-purple-500/20",
-      borderGradient: "from-blue-500/30 to-purple-500/30"
+      borderGradient: "from-blue-500/30 to-purple-500/30",
+      hoverGradient: "from-blue-500 to-blue-600"
     },
     {
       name: "Pro Plan",
@@ -85,7 +86,8 @@ const PricingPage = () => {
       cta: "Go Pro",
       popular: true,
       gradient: "from-purple-500/20 to-pink-500/20",
-      borderGradient: "from-purple-500/40 to-pink-500/40"
+      borderGradient: "from-purple-500/40 to-pink-500/40",
+      hoverGradient: "from-purple-500 to-pink-500"
     },
     {
       name: "Enterprise Plan",
@@ -101,8 +103,9 @@ const PricingPage = () => {
       ],
       cta: "Contact us",
       popular: false,
-      gradient: "from-gray-500/20 to-slate-500/20",
-      borderGradient: "from-gray-500/30 to-slate-500/30"
+      gradient: "from-blue-500/20 to-purple-500/20",
+      borderGradient: "from-blue-500/30 to-purple-500/30",
+      hoverGradient: "from-blue-500 to-blue-600"
     }
   ];
 
@@ -129,13 +132,6 @@ const PricingPage = () => {
               <p className="text-xl md:text-2xl text-slate-600 leading-relaxed mb-8">
                 Start for free and scale as you grow. No hidden fees, no surprises.
               </p>
-              <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
-                {/* <Check className="w-4 h-4 text-green-500" />
-
-
-                <Check className="w-4 h-4 text-green-500" /> */}
-
-              </div>
             </div>
 
             {/* Pricing Cards */}
@@ -152,8 +148,8 @@ const PricingPage = () => {
                     relative h-full rounded-3xl p-8 
                     bg-white/40 backdrop-blur-xl border border-white/20
                     shadow-2xl hover:shadow-3xl
-                    transition-all duration-500 ease-out
-                    hover:scale-105 hover:bg-white/50
+                    transition-all duration-300 ease-out
+                    hover:scale-[1.02] hover:bg-white/50
                     ${plan.popular ? 'ring-2 ring-purple-500/20' : ''}
                   `}>
                     {/* Popular Badge */}
@@ -213,8 +209,8 @@ const PricingPage = () => {
                       className={`w-full py-6 text-lg font-semibold transition-all duration-300 group/btn ${
                         plan.popular
                           ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-xl'
-                          : 'bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white'
-                      } hover:scale-105 active:scale-95`}
+                          : `bg-gradient-to-r ${plan.hoverGradient} text-white shadow-lg hover:shadow-xl`
+                      } hover:scale-[1.02] active:scale-95`}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {plan.cta}
