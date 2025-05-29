@@ -47,7 +47,7 @@ Clearly state how much funding you're seeking and how you plan to use the money.
 
 ## Next Steps
 End with clear next steps and a strong call to action. Make it easy for investors to follow up with you.`,
-      date: "2024-12-15",
+      date: "2025-3-15",
       readTime: "8 min read",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
       author: "Editorial Team"
@@ -74,7 +74,7 @@ With AI, you can easily customize your pitch deck for different investors or pre
 Some AI tools can provide real-time feedback on your presentation delivery, helping you improve your pitch performance before the actual investor meeting.
 
 The future of pitch deck creation is becoming increasingly intelligent, allowing entrepreneurs to focus more on their business strategy while AI handles the optimization of their presentation.`,
-      date: "2024-12-12",
+      date: "2025-3-3",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
       author: "Editorial Team"
@@ -107,7 +107,7 @@ Being vague about how much funding you need and how you'll use it shows poor pla
 Not showing evidence that your solution works or that there's market demand makes it hard for investors to believe in your potential.
 
 Avoiding these common mistakes can significantly improve your chances of securing the funding your startup needs to grow.`,
-      date: "2024-12-10",
+      date: "2025-3-10",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
       author: "Editorial Team"
@@ -137,7 +137,7 @@ Investors need to feel that this is an opportunity they can't afford to miss, bu
 Most investment decisions aren't made in the room. Design your pitch to be memorable and provide clear next steps for continued engagement.
 
 By understanding these psychological factors, you can craft a pitch that not only informs but also persuades and motivates investors to take action.`,
-      date: "2024-12-08",
+      date: "2025-3-08",
       readTime: "9 min read",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop",
       author: "Editorial Team"
@@ -167,7 +167,7 @@ Provide evidence that customers are willing to pay for your solution at your pro
 Clearly show when and how your company will become profitable. Include assumptions about growth rates, cost structure, and investment requirements.
 
 A well-crafted business model slide demonstrates that you have a clear path to building a sustainable, profitable business that can generate returns for investors.`,
-      date: "2024-12-05",
+      date: "2025-3-05",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
       author: "Editorial Team"
@@ -200,7 +200,7 @@ Include specific details, customer stories, or demonstrations that make your pre
 Conclude with a compelling vision of the future that your company is working to create. This should inspire investors to want to be part of your journey.
 
 Master storytelling can transform a good pitch deck into an unforgettable presentation that motivates investors to act.`,
-      date: "2024-12-03",
+      date: "2025-3-03",
       readTime: "8 min read",
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop",
       author: "Editorial Team"
@@ -257,11 +257,13 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
                 
                 <div className="flex items-center gap-1.5">
                   <Calendar size={14} />
-                  <span>{new Date(currentPost.date).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}</span>
+                  <span>
+  {new Date(currentPost.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  })}
+</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Clock size={14} />
@@ -301,7 +303,7 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
               </div>
             </div>
 
-            <footer className="mt-12 pt-8 border-t border-slate-200">
+            <footer className="mt-3 pt-8 border-t border-slate-200">
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 text-center">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   Ready to Create Your Perfect Pitch Deck?
