@@ -245,7 +245,7 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
               className="text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200 p-2"
             >
               <ArrowLeft size={16} className="mr-2" />
-              Back to Articles
+              Back to Blog
             </Button>
           </div>
 
@@ -258,10 +258,7 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
               
               {/* Meta Information */}
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
-                <div className="flex items-center gap-1.5">
-                  <User size={14} />
-                  <span>{currentPost.author}</span>
-                </div>
+                
                 <div className="flex items-center gap-1.5">
                   <Calendar size={14} />
                   <span>{new Date(currentPost.date).toLocaleDateString('en-US', { 
