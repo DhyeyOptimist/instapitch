@@ -1,56 +1,9 @@
-
-import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Check, Star, Crown, ArrowRight } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const PricingPage = () => {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef(null);
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero animation
-      gsap.fromTo(heroRef.current.children,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: "power2.out"
-        }
-      );
-
-      // Cards animation - smoother and faster
-      gsap.fromTo(cardsRef.current.children, 
-        { opacity: 0, y: 30, scale: 0.98 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 85%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const plans = [
     {
       name: "Starter Plan",
@@ -113,18 +66,18 @@ const PricingPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30">
       <Header />
       
-      <main ref={sectionRef} className="relative overflow-hidden">
+      <main className="relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-400/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-400/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Hero Section */}
         <section className="relative section-padding">
           <div className="container-custom">
-            <div ref={heroRef} className="text-center max-w-4xl mx-auto mb-20">
+            <div className="text-center max-w-4xl mx-auto mb-20">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-space-grotesk font-bold text-slate-900 mb-6">
                 Choose Your Perfect{' '}
                 <span className="gradient-text">Plan</span>
@@ -135,7 +88,7 @@ const PricingPage = () => {
             </div>
 
             {/* Pricing Cards */}
-            <div ref={cardsRef} className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {plans.map((plan, index) => (
                 <div
                   key={plan.name}
