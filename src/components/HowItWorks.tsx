@@ -96,7 +96,7 @@ const HowItWorks = () => {
 
         <div ref={contentRef} className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Compact Steps List */}
+
             <div className="space-y-4">
               {steps.map((step, index) => (
                 <div 
@@ -131,7 +131,7 @@ const HowItWorks = () => {
               ))}
             </div>
 
-            {/* Dynamic Image */}
+
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl hover-lift">
                 <img 

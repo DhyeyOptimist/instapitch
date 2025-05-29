@@ -11,7 +11,6 @@ const BlogPost = () => {
   const navigate = useNavigate();
   const contentRef = useRef(null);
 
-  // Blog posts data with images
   const blogPosts = [
     {
       id: 1,
@@ -236,7 +235,6 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
       
       <main className="pt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Button */}
           <div className="py-6">
             <Button
               onClick={() => navigate('/blogs')}
@@ -250,13 +248,11 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
           </div>
 
           <article ref={contentRef} className="pb-16">
-            {/* Article Header */}
             <header className="mb-10">
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 {currentPost.title}
               </h1>
               
-              {/* Meta Information */}
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-6">
                 
                 <div className="flex items-center gap-1.5">
@@ -273,7 +269,6 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
                 </div>
               </div>
 
-              {/* Hero Image - Smaller and cleaner */}
               <div className="rounded-lg overflow-hidden shadow-sm mb-8">
                 <img 
                   src={currentPost.image} 
@@ -282,13 +277,11 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
                 />
               </div>
 
-              {/* Excerpt */}
               <div className="text-lg text-slate-700 leading-relaxed mb-8 p-4 bg-slate-50 rounded-lg border-l-4 border-blue-500">
                 {currentPost.excerpt}
               </div>
             </header>
 
-            {/* Article Content - Clean Typography */}
             <div className="prose prose-slate max-w-none">
               <div className="space-y-6 text-slate-800 leading-relaxed">
                 {currentPost.content.split('\n\n').map((paragraph, index) => {
@@ -308,7 +301,6 @@ Master storytelling can transform a good pitch deck into an unforgettable presen
               </div>
             </div>
 
-            {/* Article Footer - Clean CTA */}
             <footer className="mt-12 pt-8 border-t border-slate-200">
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 text-center">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">

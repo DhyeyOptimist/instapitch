@@ -15,7 +15,7 @@ const Blog = () => {
   const cardsRef = useRef(null);
   const navigate = useNavigate();
 
-  // Sample blog posts data with images
+
   const blogPosts = [
     {
       id: 1,

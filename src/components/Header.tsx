@@ -24,7 +24,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass-morphism backdrop-blur-xl bg-white/80 border-b border-white/20">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+
           <div 
             className="flex items-center space-x-2 cursor-pointer group transition-all duration-300 hover:scale-105 active:scale-95"
             onClick={handleLogoClick}
@@ -38,7 +38,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+
           <nav className="hidden md:flex items-center space-x-8 ml-auto">
             <button 
               onClick={() => handleNavClick('/')}
@@ -63,7 +63,7 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Desktop CTA Buttons */}
+
           <div className="hidden md:flex items-center space-x-4">
             <a href="https://instapitch.io/login" rel="noopener noreferrer">
               <Button
@@ -81,7 +81,7 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+
           <button
             className="md:hidden p-2 text-dark-700 hover:text-primary-600 transition-all duration-300 rounded-lg hover:bg-primary-50/50 active:scale-95"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -90,7 +90,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-white/20 animate-fade-in">
             <nav className="flex flex-col space-y-4">

@@ -8,7 +8,7 @@ const About = () => {
       <main className="pt-20">
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Header */}
+
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 About Us
@@ -16,7 +16,6 @@ const About = () => {
               <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
             </div>
 
-            {/* Main Content */}
             <div className="prose prose-lg max-w-none mb-16">
               <p className="text-gray-600 leading-relaxed text-lg text-center max-w-3xl mx-auto">
                 Impactful Pitch is a dedicated service provider that offers comprehensive assistance to 
@@ -26,9 +25,9 @@ const About = () => {
               </p>
             </div>
 
-            {/* Three Pillars */}
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Vision Pillar */}
+
               <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
                 <div className="text-center mb-6">
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -44,7 +43,6 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Mission Pillar */}
               <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
                 <div className="text-center mb-6">
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -61,7 +59,6 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Ethics Pillar */}
               <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
                 <div className="text-center mb-6">
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">

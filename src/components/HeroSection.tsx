@@ -55,9 +55,9 @@ const HeroSection = () => {
   return (
     <section ref={heroRef} id="home" className="hero-gradient section-padding pt-32 min-h-screen flex flex-col justify-center">
       <div className="container-custom">
-        {/* Centered Hero Content */}
+
         <div className="text-center max-w-4xl mx-auto mb-16">
-          {/* Glass Effect Container */}
+
           <div className="glass-morphism backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 md:p-12 mb-12">
             <div className="space-y-6">
               <h1 ref={titleRef} className="text-4xl md:text-5xl lg:text-7xl font-space-grotesk font-bold text-dark-900 leading-tight">
@@ -84,7 +84,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Hero Image Below Content */}
+
         <div ref={imageRef} className="relative max-w-5xl mx-auto">
           <div className="relative bg-white rounded-3xl shadow-2xl p-8 hover-lift">
             <img 
@@ -92,7 +92,7 @@ const HeroSection = () => {
               alt="AI Pitch Deck Builder Interface" 
               className="w-full h-auto rounded-2xl"
             />
-            {/* Enhanced AI Button */}
+
             <div className="absolute -top-8 -right-8">
               <AIButton size="medium" />
             </div>

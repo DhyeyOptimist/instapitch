@@ -17,10 +17,10 @@ const SocialProof = () => {
           <p className="text-dark-600 font-medium text-lg">Trusted by Teams Globally</p>
         </div>
         
-        {/* Scrolling Logo Strip */}
+
         <div className="relative overflow-hidden">
           <div className="flex animate-scroll-left">
-            {/* First set */}
+
             {companies.map((company, index) => (
               <div key={index} className="flex-shrink-0 mx-12 flex items-center justify-center bg-transparent p-0 shadow-none">
                 {company.isImage ? (
@@ -34,7 +34,7 @@ const SocialProof = () => {
                 )}
               </div>
             ))}
-            {/* Duplicate set for seamless loop */}
+
             {companies.map((company, index) => (
               <div key={`duplicate-${index}`} className="flex-shrink-0 mx-12 flex items-center justify-center bg-transparent p-0 shadow-none">
                 {company.isImage ? (

@@ -74,7 +74,7 @@ const Testimonials = () => {
         </div>
 
         <div ref={cardsRef} className="relative max-w-4xl mx-auto">
-          {/* Navigation Buttons */}
+
           <button
             onClick={prevTestimonial}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 hover:shadow-xl"
@@ -89,7 +89,7 @@ const Testimonials = () => {
             <ChevronRight size={24} className="text-gray-600 transition-transform duration-300 hover:scale-110" />
           </button>
 
-          {/* Single Centered Card */}
+
           <div className="flex justify-center px-20">
             <div 
               key={currentTestimonial.id}
@@ -119,20 +119,7 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Dots Indicator */}
-          {/* <div className="flex justify-center mt-8 space-x-3">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                  index === currentIndex 
-                    ? 'bg-blue-600 scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div> */}
+          
         </div>
       </div>
     </section>

@@ -25,7 +25,7 @@ const App = () => (
           <Route path="/blogs/:id" element={<BlogPost />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/about" element={<About />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

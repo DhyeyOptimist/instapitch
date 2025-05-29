@@ -12,7 +12,7 @@ const Blogs = () => {
   const postsRef = useRef(null);
   const navigate = useNavigate();
 
-  // Extended blog posts data with images
+
   const allBlogPosts = [
     {
       id: 1,

@@ -67,14 +67,13 @@ const PricingPage = () => {
       <Header />
       
       <main className="relative overflow-hidden">
-        {/* Background Effects */}
+
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-400/5 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Hero Section */}
         <section className="relative section-padding">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-20">
@@ -87,7 +86,6 @@ const PricingPage = () => {
               </p>
             </div>
 
-            {/* Pricing Cards */}
             <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {plans.map((plan, index) => (
                 <div
@@ -96,7 +94,7 @@ const PricingPage = () => {
                     plan.popular ? 'lg:scale-105 lg:-translate-y-4' : ''
                   }`}
                 >
-                  {/* Glass Card */}
+
                   <div className={`
                     relative h-full rounded-3xl p-8 
                     bg-white/40 backdrop-blur-xl border border-white/20
@@ -105,7 +103,7 @@ const PricingPage = () => {
                     hover:scale-[1.01] hover:bg-white/50
                     ${plan.popular ? 'ring-2 ring-purple-500/20' : ''}
                   `}>
-                    {/* Popular Badge */}
+
                     {plan.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                         <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
@@ -114,10 +112,10 @@ const PricingPage = () => {
                       </div>
                     )}
 
-                    {/* Gradient Border Effect */}
+
                     <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${plan.borderGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10 blur-sm`}></div>
 
-                    {/* Header */}
+
                     <div className="text-center mb-8">
                       <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${plan.gradient} backdrop-blur-sm flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-200`}>
                         {plan.icon}
@@ -131,7 +129,7 @@ const PricingPage = () => {
                         {plan.description}
                       </p>
 
-                      {/* Pricing */}
+
                       <div className="mb-6">
                         <div className="flex items-baseline justify-center mb-2">
                           {plan.currency && (
@@ -145,7 +143,7 @@ const PricingPage = () => {
                       </div>
                     </div>
 
-                    {/* Features */}
+
                     <ul className="space-y-4 mb-8">
                       {plan.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start gap-3 group/item">
@@ -157,7 +155,7 @@ const PricingPage = () => {
                       ))}
                     </ul>
 
-                    {/* CTA Button */}
+
                     <Button
                       className={`w-full py-6 text-lg font-semibold transition-all duration-200 group/btn ${
                         plan.popular
@@ -175,7 +173,7 @@ const PricingPage = () => {
               ))}
             </div>
 
-            {/* Bottom CTA */}
+
             <div className="text-center mt-20">
               <div className="bg-white/30 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-xl max-w-2xl mx-auto">
                 <h3 className="text-2xl font-space-grotesk font-bold text-slate-900 mb-4">

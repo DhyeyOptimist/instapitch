@@ -6,7 +6,7 @@ const AIButton = ({
   onClick = () => console.log('AI Button clicked'),
   disabled = false,
   loading = false,
-  size = 'medium' // 'small', 'medium', 'large'
+  size = 'medium' 
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
@@ -25,7 +25,7 @@ const AIButton = ({
 
   return (
     <div className="relative">
-      {/* Glow Effect */}
+
       <div 
         className={`absolute inset-0 rounded-full transition-all duration-300 ${
           isHovered ? 'blur-xl opacity-60' : 'blur-lg opacity-40'
@@ -36,7 +36,7 @@ const AIButton = ({
         }}
       />
       
-      {/* Main Button */}
+
       <button
         onClick={onClick}
         disabled={disabled || loading}
@@ -69,7 +69,7 @@ const AIButton = ({
           `
         }}
       >
-        {/* Inner glow */}
+
         <div 
           className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
@@ -77,7 +77,7 @@ const AIButton = ({
           }}
         />
         
-        {/* Icon container */}
+
         <div className="relative z-10 flex items-center justify-center h-full">
           {loading ? (
             <div 
@@ -92,7 +92,7 @@ const AIButton = ({
                   isHovered ? 'scale-110 rotate-12' : 'scale-100'
                 }`}
               />
-              {/* Sparkle animation */}
+
               <Zap 
                 size={iconSizes[size] * 0.6} 
                 className={`absolute top-0 left-0 text-white/80 transition-all duration-500 ${
@@ -103,7 +103,7 @@ const AIButton = ({
           )}
         </div>
         
-        {/* Pulse animation */}
+
         <div 
           className={`absolute inset-0 rounded-full border-2 border-white/50 transition-all duration-1000 ${
             isHovered ? 'scale-150 opacity-0' : 'scale-100 opacity-100'
@@ -111,16 +111,7 @@ const AIButton = ({
         />
       </button>
       
-      {/* Small indicator dot */}
-      {/* <div 
-        className={`absolute -top-1 -right-1 w-2 h-2 rounded-full transition-all duration-300 ${
-          loading ? 'animate-pulse' : ''
-        }`}
-        style={{
-          background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-          boxShadow: '0 0 8px rgba(16, 185, 129, 0.5)'
-        }}
-      /> */}
+      
     </div>
   );
 };

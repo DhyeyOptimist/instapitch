@@ -1,5 +1,5 @@
 
-import { Instagram, Twitter, Youtube } from 'lucide-react';
+
 import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className="bg-dark-900 text-white">
       <div className="container-custom py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {/* Logo & Description */}
+
           <div className="md:col-span-2">
             <div 
               className="flex items-center space-x-2 mb-4 cursor-pointer group transition-all duration-300 hover:scale-105 w-fit"
@@ -38,7 +38,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation Links */}
+
           <div>
             <h3 className="font-semibold mb-4 text-lg">Product</h3>
             <ul className="space-y-3 text-dark-300">
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
+
         <div className="border-t border-dark-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-dark-400 text-sm mb-4 md:mb-0 transition-colors duration-300 hover:text-dark-200">
             © 2024 Instapitch. All rights reserved.
