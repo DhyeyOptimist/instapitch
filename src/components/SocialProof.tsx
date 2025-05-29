@@ -1,4 +1,3 @@
-
 const SocialProof = () => {
   const companies = [
     { name: 'TechCorp', logo: '/algobulls.png', isImage: true },
@@ -23,12 +22,12 @@ const SocialProof = () => {
           <div className="flex animate-scroll-left">
             {/* First set */}
             {companies.map((company, index) => (
-              <div key={index} className="flex-shrink-0 mx-12 flex items-center justify-center">
+              <div key={index} className="flex-shrink-0 mx-12 flex items-center justify-center bg-transparent p-0 shadow-none">
                 {company.isImage ? (
                   <img 
                     src={company.logo} 
                     alt={company.name} 
-                    className="w-32 h-32 object-contain filter grayscale"
+                    className="w-32 h-32 object-contain"
                   />
                 ) : (
                   <span className="font-bold text-dark-700 text-xl">{company.logo}</span>
@@ -37,12 +36,12 @@ const SocialProof = () => {
             ))}
             {/* Duplicate set for seamless loop */}
             {companies.map((company, index) => (
-              <div key={`duplicate-${index}`} className="flex-shrink-0 mx-12 flex items-center justify-center">
+              <div key={`duplicate-${index}`} className="flex-shrink-0 mx-12 flex items-center justify-center bg-transparent p-0 shadow-none">
                 {company.isImage ? (
                   <img 
                     src={company.logo} 
                     alt={company.name} 
-                    className="w-32 h-32 object-contain filter grayscale"
+                    className="w-32 h-32 object-contain"
                   />
                 ) : (
                   <span className="font-bold text-dark-700 text-xl">{company.logo}</span>
